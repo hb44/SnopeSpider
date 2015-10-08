@@ -1,4 +1,4 @@
-# snopeSpider
+# SnopeSpider
 
 A spider for snopes.com based on BeautifulSoup4. Feel free to use.
 
