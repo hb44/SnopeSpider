@@ -112,32 +112,6 @@ def parseItem(surl, murl, status):
     if len(sClaim) > 2 and len(sOrigins) > 2 and len(sSource) > 2 and len(sExample)> 2:
         print ("Information retrieved")
     outputFile(sClaim, status, sExample, sOrigins, sSource, trueUrl)
-'''
-#parse itemlist page
-def parseItem(surl, murl, status):
-    baseUrl = 'http://www.snopes.com'
-    #1. determine if in base url
-    if len(surl.split('/')) != 1:
-        trueUrl = baseUrl + surl
-    else:
-        trueUrl = murl[0:murl.rfind('/')+1] + surl
-    print('Parsing:   ' + trueUrl)
-
-    html = urllib2.urlopen(trueUrl).read()
-    soup = BeautifulSoup(html)
-    mark = 0
-    for i in soup.find_all('div'):
-        if i.has_attr('style'):
-            if i['style'] == 'text-align: justify; margin-left: 15px;  margin-right: 15px':
-                mark = 1
-                print (i.get_text())
-
-    if mark==0:
-        for i in soup.find_all('div'):
-            if i.has_attr('class'):
-                if "article_text" in i['class']:
-                    print(i.get_text())
-'''
 
 #parse subcatagory page
 def parseSubCata(url):
